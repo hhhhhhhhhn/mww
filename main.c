@@ -7,8 +7,7 @@
 
 int main(int argc, char** argv) {
 	int cols;
-	if(argc == 1 || (cols = atoi(argv[1])) < 1) 
-		cols = 80;
+	if(argc == 1 || (cols = atoi(argv[1])) < 1) cols = 80;
 
 	int chr;
 	int current_column = 0;
@@ -21,7 +20,7 @@ int main(int argc, char** argv) {
 
 	// while((chr = getchar()) != EOF) putchar(chr); // DEBUG
 	while((chr = getchar()) != EOF) {
-		if(chr == 27 && !in_escape) in_escape = 1;	
+		if(chr == 27 && !in_escape) in_escape = 1;
 		else if(chr == 109 && in_escape) in_escape = 0;
 
 		if (chr == ' ' || chr == '\n') {
